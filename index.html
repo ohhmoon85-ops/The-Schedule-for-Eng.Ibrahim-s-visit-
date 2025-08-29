@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이집트 마흐렙 전 총리 방한 일정</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+
+        .info-section {
+            padding: 30px 40px;
+            background: #f8f9ff;
+            border-bottom: 1px solid #e0e5ff;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid #667eea;
+        }
+
+        .info-card h3 {
+            color: #1e3c72;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .info-card p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .schedule-section {
+            padding: 40px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #1e3c72;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
+
+        .day-schedule {
+            margin-bottom: 40px;
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+            border: 1px solid #e0e5ff;
+        }
+
+        .day-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 30px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .day-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(255,255,255,0.3), transparent);
+        }
+
+        .schedule-item {
+            padding: 20px 30px;
+            border-bottom: 1px solid #f0f0f0;
+            display: grid;
+            grid-template-columns: 120px 1fr 200px;
+            gap: 20px;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .schedule-item:hover {
+            background-color: #f8f9ff;
+        }
+
+        .schedule-item:last-child {
+            border-bottom: none;
+        }
+
+        .time {
+            font-weight: 600;
+            color: #667eea;
+            font-size: 1rem;
+            text-align: center;
+            padding: 8px 12px;
+            background: #f0f3ff;
+            border-radius: 8px;
+        }
+
+        .activity {
+            font-size: 1rem;
+            color: #333;
+            line-height: 1.5;
+        }
+
+        .location {
+            color: #666;
+            font-style: italic;
+            text-align: right;
+            padding: 8px 12px;
+            background: #f8f8f8;
+            border-radius: 8px;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            border-left: 4px solid #ff9a56;
+        }
+
+        .highlight .time {
+            background: rgba(255, 154, 86, 0.2);
+            color: #cc7a00;
+        }
+
+        .forum-section {
+            margin-top: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            border-radius: 16px;
+            border: 2px solid #e0f2ff;
+        }
+
+        .forum-title {
+            color: #1e3c72;
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .forum-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .forum-item {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .forum-item strong {
+            color: #1e3c72;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .schedule-table {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .schedule-row {
+            display: grid;
+            grid-template-columns: 120px 1fr 200px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .schedule-row.header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            font-weight: 600;
+        }
+
+        .schedule-row.important {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border-left: 4px solid #ff9800;
+        }
+
+        .schedule-row.keynote {
+            background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+            border-left: 4px solid #4caf50;
+        }
+
+        .schedule-row.performance {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            border-left: 4px solid #9c27b0;
+        }
+
+        .schedule-row.special {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left: 4px solid #2196f3;
+        }
+
+        .schedule-row.dinner {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+            border-left: 4px solid #e91e63;
+        }
+
+        .time-cell, .content-cell, .note-cell {
+            padding: 15px;
+            align-self: center;
+        }
+
+        .time-cell {
+            font-weight: 600;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .content-cell {
+            line-height: 1.5;
+        }
+
+        .content-cell strong {
+            color: #1e3c72;
+        }
+
+        .note-cell {
+            font-style: italic;
+            color: #666;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .detailed-schedule {
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .schedule-item {
+                grid-template-columns: 1fr;
+                gap: 10px;
+                text-align: center;
+            }
+
+            .location {
+                text-align: center;
+            }
+
+            .header h1 {
+                font-size: 1.8rem;
+            }
+
+            .container {
+                margin: 10px;
+            }
+
+            body {
+                padding: 10px;
+            }
+
+            .schedule-row {
+                grid-template-columns: 1fr;
+            }
+
+            .schedule-table {
+                font-size: 0.9rem;
+            }
+
+            .time-cell, .content-cell, .note-cell {
+                padding: 12px;
+                text-align: center;
+            }
+
+            .note-cell {
+                border-top: 1px solid #ddd;
+                background: rgba(0, 0, 0, 0.05);
+            }
+        }
+
+        .footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>이집트 마흐렙 전 총리 방한 일정</h1>
+            <p>2025년 9월 8일 ~ 9월 13일</p>
+        </div>
+
+        <div class="info-section">
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>방한 주관</h3>
+                    <p>매경미디어그룹, 한국이집트발전협회(KEDA), 고려대 중동이슬람센터</p>
+                </div>
+                <div class="info-card">
+                    <h3>방한 인사</h3>
+                    <p>이브라힘 마흐렙 전 총리<br>수행: BEK그룹 사장단 2명</p>
+                </div>
+                <div class="info-card">
+                    <h3>주요 목적</h3>
+                    <p>한국-이집트 경제문화협력 증진 및 투자 활성화</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="schedule-section">
+            <h2 class="section-title">상세 일정</h2>
+
+            <div class="day-schedule">
+                <div class="day-header">9월 8일 (월요일) - 도착</div>
+                <div class="schedule-item">
+                    <div class="time">10:45</div>
+                    <div class="activity">인천공항 도착 및 영접</div>
+                    <div class="location">인천공항</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">오후</div>
+                    <div class="activity">신라호텔 체크인 및 매경신문/MBN뉴스 인터뷰</div>
+                    <div class="location">신라호텔</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">18:30</div>
+                    <div class="activity">대사 주최 만찬</div>
+                    <div class="location">이집트대사관</div>
+                </div>
+            </div>
+
+            <div class="day-schedule">
+                <div class="day-header">9월 9일 (화요일) - World Knowledge Forum</div>
+                <div class="schedule-item highlight">
+                    <div class="time">08:30</div>
+                    <div class="activity">World Knowledge Forum(WKF) 개막식</div>
+                    <div class="location">장충체육관</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">오찬</div>
+                    <div class="activity">오찬</div>
+                    <div class="location">신라호텔</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">15:00</div>
+                    <div class="activity">코리아헤럴드 인터뷰</div>
+                    <div class="location">신라호텔</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">18:00</div>
+                    <div class="activity">WKF VIP 만찬</div>
+                    <div class="location">-</div>
+                </div>
+            </div>
+
+            <div class="day-schedule">
+                <div class="day-header">9월 10일 (수요일) - 발표 및 협력</div>
+                <div class="schedule-item">
+                    <div class="time">조찬</div>
+                    <div class="activity">조찬 및 발표내용 검토</div>
+                    <div class="location">신라호텔</div>
+                </div>
+                <div class="schedule-item highlight">
+                    <div class="time">12:00</div>
+                    <div class="activity">WKF 세션 주제발표 (마흐렙 전 총리)</div>
+                    <div class="location">-</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">15:00</div>
+                    <div class="activity">New Giza University & 서울과기대 산학협력 MOU</div>
+                    <div class="location">신라호텔</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">15:30</div>
+                    <div class="activity">삼성물산 부사장 면담</div>
+                    <div class="location">신라호텔</div>
+                </div>
+            </div>
+
+            <div class="day-schedule">
+                <div class="day-header">9월 11일 (목요일) - 경제포럼</div>
+                <div class="schedule-item">
+                    <div class="time">10:00</div>
+                    <div class="activity">합작·투자 희망 기업인 간담회 (6개 회사)</div>
+                    <div class="location">신라호텔</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">12:00</div>
+                    <div class="activity">기업인들과 오찬</div>
+                    <div class="location">신라호텔</div>
+                </div>
+                <div class="schedule-item highlight">
+                    <div class="time">14:00</div>
+                    <div class="activity">경제문화협력 포럼 / 엘시시전기 출판기념 / 노벨평화상 추천행사</div>
+                    <div class="location">고려대 천신일홀</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">17:30</div>
+                    <div class="activity">포럼 참석자 만찬 (약 50명)</div>
+                    <div class="location">모심 한정식당</div>
+                </div>
+            </div>
+
+            <div class="day-schedule">
+                <div class="day-header">9월 12일 (금요일) - 의료 및 건강검진</div>
+                <div class="schedule-item">
+                    <div class="time">10:00</div>
+                    <div class="activity">의료기기회사 CEO 면담</div>
+                    <div class="location">신라호텔</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">11:00</div>
+                    <div class="activity">삼성서울병원으로 이동</div>
+                    <div class="location">-</div>
+                </div>
+                <div class="schedule-item highlight">
+                    <div class="time">12:00</div>
+                    <div class="activity">건강검진 (12:00~16:00)</div>
+                    <div class="location">삼성서울병원</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">저녁</div>
+                    <div class="activity">만찬</div>
+                    <div class="location">신라호텔</div>
+                </div>
+            </div>
+
+            <div class="day-schedule">
+                <div class="day-header">9월 13일 (토요일) - 문화탐방 및 출국</div>
+                <div class="schedule-item">
+                    <div class="time">조찬</div>
+                    <div class="activity">조찬</div>
+                    <div class="location">신라호텔</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">오전/오후</div>
+                    <div class="activity">문화탐방</div>
+                    <div class="location">경복궁</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">23:55</div>
+                    <div class="activity">출국</div>
+                    <div class="location">인천공항</div>
+                </div>
+            </div>
+
+            <div class="forum-section">
+                <div class="forum-title">🏛️ 한국이집트수교 30주년기념 경제문화포럼 상세정보</div>
+                <div class="forum-details">
+                    <div class="forum-item">
+                        <strong>일시</strong>
+                        2025년 9월 11일 (목) 14:00~17:00
+                    </div>
+                    <div class="forum-item">
+                        <strong>장소</strong>
+                        고려대학교 "천신일홀" 강당
+                    </div>
+                    <div class="forum-item">
+                        <strong>주최</strong>
+                        한국이집트발전협회(KEDA), 고려대 정경대 중동이슬람센터
+                    </div>
+                    <div class="forum-item">
+                        <strong>참석 예상</strong>
+                        약 100여 명 (교수, 학계, 기업인, 언론 등)
+                    </div>
+                    <div class="forum-item">
+                        <strong>주요 참석자</strong>
+                        마흐렙 전 총리, 칼리드 이집트대사, 김진표 전 국회의장 등
+                    </div>
+                    <div class="forum-item">
+                        <strong>특별 증정</strong>
+                        엘시시 대통령 전기 "New Egypt, The Tiger of the Nile"
+                    </div>
+                </div>
+
+                <div class="detailed-schedule">
+                    <h3 style="color: #1e3c72; margin: 30px 0 20px; text-align: center; font-size: 1.4rem;">📅 포럼 상세 프로그램</h3>
+                    <div class="schedule-table">
+                        <div class="schedule-row header">
+                            <div class="time-cell">시간</div>
+                            <div class="content-cell">내용</div>
+                            <div class="note-cell">비고</div>
+                        </div>
+                        <div class="schedule-row">
+                            <div class="time-cell">13:30~14:00</div>
+                            <div class="content-cell">등록 및 안내</div>
+                            <div class="note-cell">-</div>
+                        </div>
+                        <div class="schedule-row important">
+                            <div class="time-cell">14:00~14:30</div>
+                            <div class="content-cell">
+                                <strong>개막식</strong><br>
+                                • 국민의례<br>
+                                • 개회사: 고려대 아세아문제연구원장<br>
+                                • 환영사: 고려대 정경대학장<br>
+                                • 축사: Dr. 칼리드 이집트대사<br>
+                                • 축사: Dr. 이희범 KEDA 명예회장
+                            </div>
+                            <div class="note-cell">-</div>
+                        </div>
+                        <div class="schedule-row keynote">
+                            <div class="time-cell">14:30~14:45</div>
+                            <div class="content-cell"><strong>기조연설: 마흐렙 전 총리</strong></div>
+                            <div class="note-cell">통역: 강회장</div>
+                        </div>
+                        <div class="schedule-row">
+                            <div class="time-cell">14:45~15:00</div>
+                            <div class="content-cell">이집트/중동지역 정세 (고려대정경대 교수)</div>
+                            <div class="note-cell">-</div>
+                        </div>
+                        <div class="schedule-row">
+                            <div class="time-cell">15:00~15:15</div>
+                            <div class="content-cell">이집트/중동지역 경제 (고려대정경대 교수)</div>
+                            <div class="note-cell">-</div>
+                        </div>
+                        <div class="schedule-row performance">
+                            <div class="time-cell">15:15~15:30</div>
+                            <div class="content-cell">초대가수 공연행사 (가수 기은서)</div>
+                            <div class="note-cell">-</div>
+                        </div>
+                        <div class="schedule-row special">
+                            <div class="time-cell">15:30~15:50</div>
+                            <div class="content-cell">엘시시전기 출판기념행사</div>
+                            <div class="note-cell">준비위: 문형철사무총장</div>
+                        </div>
+                        <div class="schedule-row special">
+                            <div class="time-cell">15:50~16:10</div>
+                            <div class="content-cell">노벨평화상추천 행사</div>
+                            <div class="note-cell">준비위원장: 송승종박사</div>
+                        </div>
+                        <div class="schedule-row">
+                            <div class="time-cell">16:10~17:00</div>
+                            <div class="content-cell">이집트진출원하는 한국기업의 질의응답</div>
+                            <div class="note-cell">사회: 강회장</div>
+                        </div>
+                        <div class="schedule-row dinner">
+                            <div class="time-cell">17:30~18:30</div>
+                            <div class="content-cell">만찬</div>
+                            <div class="note-cell">-</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>한국-이집트 수교 30주년을 기념하는 의미있는 방문입니다 🤝</p>
+        </div>
+    </div>
+</body>
+</html>
