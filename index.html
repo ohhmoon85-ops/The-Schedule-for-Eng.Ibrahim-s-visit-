@@ -196,6 +196,36 @@
             color: #cc7a00;
         }
 
+        .medical-highlight {
+            background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+            border-left: 4px solid #4caf50;
+        }
+
+        .medical-highlight .time {
+            background: rgba(76, 175, 80, 0.2);
+            color: #2e7d32;
+        }
+
+        .updated-note {
+            background: #fff3e0;
+            border: 2px solid #ff9800;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .updated-note h3 {
+            color: #e65100;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .updated-note p {
+            color: #bf360c;
+            font-size: 0.95rem;
+        }
+
         .forum-section {
             margin-top: 40px;
             padding: 30px;
@@ -360,7 +390,7 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>이집트 마흐렙 전 총리 방한 일정</h1>
+            <h1>🇪🇬 이집트 마흐렙 전 총리 방한 일정</h1>
             <p>2025년 9월 8일 ~ 9월 13일</p>
         </div>
 
@@ -382,6 +412,11 @@
         </div>
 
         <div class="schedule-section">
+            <div class="updated-note">
+                <h3>📋 최신 업데이트 일정</h3>
+                <p>2025년 9월 1일 기준 변경된 최종 일정입니다</p>
+            </div>
+
             <h2 class="section-title">상세 일정</h2>
 
             <div class="day-schedule">
@@ -393,13 +428,13 @@
                 </div>
                 <div class="schedule-item">
                     <div class="time">오후</div>
-                    <div class="activity">신라호텔 체크인 및 매경신문/MBN뉴스 인터뷰</div>
+                    <div class="activity">신라호텔 체크인 및 매경신문/MBN뉴스 인터뷰 (15:00)</div>
                     <div class="location">신라호텔</div>
                 </div>
                 <div class="schedule-item">
                     <div class="time">18:30</div>
                     <div class="activity">대사 주최 만찬</div>
-                    <div class="location">이집트대사관</div>
+                    <div class="location">이집트 대사관저</div>
                 </div>
             </div>
 
@@ -411,17 +446,22 @@
                     <div class="location">장충체육관</div>
                 </div>
                 <div class="schedule-item">
-                    <div class="time">오찬</div>
-                    <div class="activity">오찬</div>
+                    <div class="time">11:30</div>
+                    <div class="activity">EDANA Group 면담 / 오찬</div>
                     <div class="location">신라호텔</div>
                 </div>
                 <div class="schedule-item">
-                    <div class="time">15:00</div>
+                    <div class="time">14:00</div>
+                    <div class="activity">Group KS연구소 방문</div>
+                    <div class="location">시청 뒤</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">16:00</div>
                     <div class="activity">코리아헤럴드 인터뷰</div>
                     <div class="location">신라호텔</div>
                 </div>
                 <div class="schedule-item">
-                    <div class="time">18:00</div>
+                    <div class="time">18:30</div>
                     <div class="activity">WKF VIP 만찬</div>
                     <div class="location">-</div>
                 </div>
@@ -436,17 +476,27 @@
                 </div>
                 <div class="schedule-item highlight">
                     <div class="time">12:00</div>
-                    <div class="activity">WKF 세션 주제발표 (마흐렙 전 총리)</div>
+                    <div class="activity">WKF 세션 주제발표 (H.E.Eng.Mahlab)</div>
                     <div class="location">-</div>
                 </div>
                 <div class="schedule-item">
-                    <div class="time">15:00</div>
-                    <div class="activity">New Giza University & 서울과기대 산학협력 MOU</div>
+                    <div class="time">오찬</div>
+                    <div class="activity">발표 후 참석한 협회임원진과 함께 오찬</div>
                     <div class="location">신라호텔</div>
                 </div>
                 <div class="schedule-item">
-                    <div class="time">15:30</div>
-                    <div class="activity">삼성물산 부사장 면담</div>
+                    <div class="time">15:00</div>
+                    <div class="activity">이집트 뉴기자대학과 서울과학기술대학간 산학협력 MOU</div>
+                    <div class="location">신라호텔</div>
+                </div>
+                <div class="schedule-item medical-highlight">
+                    <div class="time">16:00</div>
+                    <div class="activity">Dr.정필훈 서울대 전 치과대학장 면담<br>(이집트 Delta대학과 한국의 의과대학 협력방안 논의)</div>
+                    <div class="location">신라호텔</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">만찬</div>
+                    <div class="activity">만찬</div>
                     <div class="location">신라호텔</div>
                 </div>
             </div>
@@ -454,32 +504,52 @@
             <div class="day-schedule">
                 <div class="day-header">9월 11일 (목요일) - 경제포럼</div>
                 <div class="schedule-item">
-                    <div class="time">10:00</div>
-                    <div class="activity">합작·투자 희망 기업인 간담회 (6개 회사)</div>
+                    <div class="time">조찬</div>
+                    <div class="activity">조찬</div>
                     <div class="location">신라호텔</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">09:30</div>
+                    <div class="activity">지형근 삼성물산 부사장 면담</div>
+                    <div class="location">신라호텔</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">10:00</div>
+                    <div class="activity">이집트진출 희망기업인 간담회</div>
+                    <div class="location">신라호텔 23층 회의실 3호실</div>
                 </div>
                 <div class="schedule-item">
                     <div class="time">12:00</div>
-                    <div class="activity">기업인들과 오찬</div>
-                    <div class="location">신라호텔</div>
+                    <div class="activity">이집트진출 희망기업인 오찬</div>
+                    <div class="location">신라호텔 23층 불란서식당</div>
+                </div>
+                <div class="schedule-item">
+                    <div class="time">13:00</div>
+                    <div class="activity">고려대 오문준홀로 이동</div>
+                    <div class="location">-</div>
                 </div>
                 <div class="schedule-item highlight">
                     <div class="time">14:00</div>
-                    <div class="activity">경제문화협력 포럼 / 엘시시전기 출판기념 / 노벨평화상 추천행사</div>
-                    <div class="location">고려대 천신일홀</div>
+                    <div class="activity">① 경제문화협력 포럼<br>② 엘시시전기 출판기념</div>
+                    <div class="location">고려대 오문준홀 (619호)</div>
                 </div>
                 <div class="schedule-item">
                     <div class="time">17:30</div>
-                    <div class="activity">포럼 참석자 만찬 (약 50명)</div>
-                    <div class="location">모심 한정식당</div>
+                    <div class="activity">만찬 (포럼 참석자)</div>
+                    <div class="location">고려대 앞 모심 한정식</div>
                 </div>
             </div>
 
             <div class="day-schedule">
                 <div class="day-header">9월 12일 (금요일) - 의료 및 건강검진</div>
+                <div class="schedule-item medical-highlight">
+                    <div class="time">조찬</div>
+                    <div class="activity">금식 (검진 전 10시간 이상)<br>혈압약 제외한 나머지 약 중단 필요</div>
+                    <div class="location">신라호텔</div>
+                </div>
                 <div class="schedule-item">
                     <div class="time">10:00</div>
-                    <div class="activity">의료기기회사 CEO 면담</div>
+                    <div class="activity">메디칼 AI(심전도 진단기기 개발회사) 대표 면담</div>
                     <div class="location">신라호텔</div>
                 </div>
                 <div class="schedule-item">
@@ -493,7 +563,7 @@
                     <div class="location">삼성서울병원</div>
                 </div>
                 <div class="schedule-item">
-                    <div class="time">저녁</div>
+                    <div class="time">만찬</div>
                     <div class="activity">만찬</div>
                     <div class="location">신라호텔</div>
                 </div>
@@ -507,9 +577,9 @@
                     <div class="location">신라호텔</div>
                 </div>
                 <div class="schedule-item">
-                    <div class="time">오전/오후</div>
+                    <div class="time">오찬</div>
                     <div class="activity">문화탐방</div>
-                    <div class="location">경복궁</div>
+                    <div class="location">경복궁 등</div>
                 </div>
                 <div class="schedule-item">
                     <div class="time">23:55</div>
@@ -519,7 +589,7 @@
             </div>
 
             <div class="forum-section">
-                <div class="forum-title">🏛️ 한국이집트수교 30주년기념 경제문화포럼 상세정보</div>
+                <div class="forum-title">🏛️ 한국이집트수교 30주년기념 경제문화포럼</div>
                 <div class="forum-details">
                     <div class="forum-item">
                         <strong>일시</strong>
@@ -527,99 +597,36 @@
                     </div>
                     <div class="forum-item">
                         <strong>장소</strong>
-                        고려대학교 "천신일홀" 강당
+                        고려대학교 오문준홀 (619호)
                     </div>
                     <div class="forum-item">
                         <strong>주최</strong>
                         한국이집트발전협회(KEDA), 고려대 정경대 중동이슬람센터
                     </div>
                     <div class="forum-item">
-                        <strong>참석 예상</strong>
-                        약 100여 명 (교수, 학계, 기업인, 언론 등)
+                        <strong>주요 행사</strong>
+                        경제문화협력 포럼, 엘시시 전기 출판기념
                     </div>
                     <div class="forum-item">
-                        <strong>주요 참석자</strong>
-                        마흐렙 전 총리, 칼리드 이집트대사, 김진표 전 국회의장 등
+                        <strong>주요 변경사항</strong>
+                        • 장소: 천신일홀 → 오문준홀(619호)<br>
+                        • 노벨평화상 추천행사 일정 조정
                     </div>
                     <div class="forum-item">
                         <strong>특별 증정</strong>
                         엘시시 대통령 전기 "New Egypt, The Tiger of the Nile"
                     </div>
                 </div>
-
-                <div class="detailed-schedule">
-                    <h3 style="color: #1e3c72; margin: 30px 0 20px; text-align: center; font-size: 1.4rem;">📅 포럼 상세 프로그램</h3>
-                    <div class="schedule-table">
-                        <div class="schedule-row header">
-                            <div class="time-cell">시간</div>
-                            <div class="content-cell">내용</div>
-                            <div class="note-cell">비고</div>
-                        </div>
-                        <div class="schedule-row">
-                            <div class="time-cell">13:30~14:00</div>
-                            <div class="content-cell">등록 및 안내</div>
-                            <div class="note-cell">-</div>
-                        </div>
-                        <div class="schedule-row important">
-                            <div class="time-cell">14:00~14:30</div>
-                            <div class="content-cell">
-                                <strong>개막식</strong><br>
-                                • 국민의례<br>
-                                • 개회사: 고려대 아세아문제연구원장<br>
-                                • 환영사: 고려대 정경대학장<br>
-                                • 축사: Dr. 칼리드 이집트대사<br>
-                                • 축사: Dr. 이희범 KEDA 명예회장
-                            </div>
-                            <div class="note-cell">-</div>
-                        </div>
-                        <div class="schedule-row keynote">
-                            <div class="time-cell">14:30~14:45</div>
-                            <div class="content-cell"><strong>기조연설: 마흐렙 전 총리</strong></div>
-                            <div class="note-cell">통역: 강회장</div>
-                        </div>
-                        <div class="schedule-row">
-                            <div class="time-cell">14:45~15:00</div>
-                            <div class="content-cell">이집트/중동지역 정세 (고려대정경대 교수)</div>
-                            <div class="note-cell">-</div>
-                        </div>
-                        <div class="schedule-row">
-                            <div class="time-cell">15:00~15:15</div>
-                            <div class="content-cell">이집트/중동지역 경제 (고려대정경대 교수)</div>
-                            <div class="note-cell">-</div>
-                        </div>
-                        <div class="schedule-row performance">
-                            <div class="time-cell">15:15~15:30</div>
-                            <div class="content-cell">초대가수 공연행사 (가수 기은서)</div>
-                            <div class="note-cell">-</div>
-                        </div>
-                        <div class="schedule-row special">
-                            <div class="time-cell">15:30~15:50</div>
-                            <div class="content-cell">엘시시전기 출판기념행사</div>
-                            <div class="note-cell">준비위: 문형철사무총장</div>
-                        </div>
-                        <div class="schedule-row special">
-                            <div class="time-cell">15:50~16:10</div>
-                            <div class="content-cell">노벨평화상추천 행사</div>
-                            <div class="note-cell">준비위원장: 송승종박사</div>
-                        </div>
-                        <div class="schedule-row">
-                            <div class="time-cell">16:10~17:00</div>
-                            <div class="content-cell">이집트진출원하는 한국기업의 질의응답</div>
-                            <div class="note-cell">사회: 강회장</div>
-                        </div>
-                        <div class="schedule-row dinner">
-                            <div class="time-cell">17:30~18:30</div>
-                            <div class="content-cell">만찬</div>
-                            <div class="note-cell">-</div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
 
         <div class="footer">
-            <p>한국-이집트 수교 30주년을 기념하는 의미있는 방문입니다 🤝</p>
+            <p>한국-이집트 수교 30주년을 기념하는 의미있는 방문입니다 🤝<br>
+            <small>최종 업데이트: 2025년 9월 1일</small></p>
         </div>
     </div>
 </body>
+</html>
+</body>
+
 </html>
