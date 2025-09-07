@@ -206,24 +206,38 @@
             color: #2e7d32;
         }
 
+        .business-highlight {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left: 4px solid #2196f3;
+        }
+
+        .business-highlight .time {
+            background: rgba(33, 150, 243, 0.2);
+            color: #1565c0;
+        }
+
         .updated-note {
-            background: #fff3e0;
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
             border: 2px solid #ff9800;
             border-radius: 12px;
-            padding: 15px;
-            margin-bottom: 20px;
+            padding: 20px;
+            margin-bottom: 30px;
             text-align: center;
         }
 
         .updated-note h3 {
             color: #e65100;
             margin-bottom: 8px;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
         }
 
         .updated-note p {
             color: #bf360c;
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
 
         .forum-section {
@@ -261,81 +275,6 @@
             margin-bottom: 5px;
         }
 
-        .schedule-table {
-            background: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            margin-top: 20px;
-        }
-
-        .schedule-row {
-            display: grid;
-            grid-template-columns: 120px 1fr 200px;
-            border-bottom: 1px solid #eee;
-        }
-
-        .schedule-row.header {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            color: white;
-            font-weight: 600;
-        }
-
-        .schedule-row.important {
-            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
-            border-left: 4px solid #ff9800;
-        }
-
-        .schedule-row.keynote {
-            background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
-            border-left: 4px solid #4caf50;
-        }
-
-        .schedule-row.performance {
-            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
-            border-left: 4px solid #9c27b0;
-        }
-
-        .schedule-row.special {
-            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
-            border-left: 4px solid #2196f3;
-        }
-
-        .schedule-row.dinner {
-            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
-            border-left: 4px solid #e91e63;
-        }
-
-        .time-cell, .content-cell, .note-cell {
-            padding: 15px;
-            align-self: center;
-        }
-
-        .time-cell {
-            font-weight: 600;
-            text-align: center;
-            background: rgba(255, 255, 255, 0.3);
-        }
-
-        .content-cell {
-            line-height: 1.5;
-        }
-
-        .content-cell strong {
-            color: #1e3c72;
-        }
-
-        .note-cell {
-            font-style: italic;
-            color: #666;
-            text-align: center;
-            font-size: 0.9rem;
-        }
-
-        .detailed-schedule {
-            margin-top: 30px;
-        }
-
         @media (max-width: 768px) {
             .schedule-item {
                 grid-template-columns: 1fr;
@@ -357,24 +296,6 @@
 
             body {
                 padding: 10px;
-            }
-
-            .schedule-row {
-                grid-template-columns: 1fr;
-            }
-
-            .schedule-table {
-                font-size: 0.9rem;
-            }
-
-            .time-cell, .content-cell, .note-cell {
-                padding: 12px;
-                text-align: center;
-            }
-
-            .note-cell {
-                border-top: 1px solid #ddd;
-                background: rgba(0, 0, 0, 0.05);
             }
         }
 
@@ -413,8 +334,8 @@
 
         <div class="schedule-section">
             <div class="updated-note">
-                <h3>📋 최신 업데이트 일정</h3>
-                <p>2025년 9월 1일 기준 변경된 최종 일정입니다</p>
+                <h3>🔔 최신 업데이트 일정</h3>
+                <p>2025년 9월 7일 기준 확정된 최종 일정입니다</p>
             </div>
 
             <h2 class="section-title">상세 일정</h2>
@@ -428,7 +349,7 @@
                 </div>
                 <div class="schedule-item">
                     <div class="time">오후</div>
-                    <div class="activity">신라호텔 체크인 및 매경신문/MBN뉴스 인터뷰 (15:00)</div>
+                    <div class="activity">신라호텔 체크인<br>매경신문 / MBN뉴스 인터뷰 (15:00)</div>
                     <div class="location">신라호텔</div>
                 </div>
                 <div class="schedule-item">
@@ -445,12 +366,12 @@
                     <div class="activity">World Knowledge Forum(WKF) 개막식</div>
                     <div class="location">장충체육관</div>
                 </div>
-                <div class="schedule-item">
+                <div class="schedule-item business-highlight">
                     <div class="time">11:30</div>
                     <div class="activity">EDANA Group 면담 / 오찬</div>
                     <div class="location">신라호텔</div>
                 </div>
-                <div class="schedule-item">
+                <div class="schedule-item business-highlight">
                     <div class="time">14:00</div>
                     <div class="activity">Group KS연구소 방문</div>
                     <div class="location">시청 뒤</div>
@@ -484,14 +405,19 @@
                     <div class="activity">발표 후 참석한 협회임원진과 함께 오찬</div>
                     <div class="location">신라호텔</div>
                 </div>
-                <div class="schedule-item">
+                <div class="schedule-item business-highlight">
                     <div class="time">15:00</div>
                     <div class="activity">이집트 뉴기자대학과 서울과학기술대학간 산학협력 MOU</div>
                     <div class="location">신라호텔</div>
                 </div>
                 <div class="schedule-item medical-highlight">
-                    <div class="time">15:30</div>
-                    <div class="activity">Dr.정필훈 서울대 전 치과대학장 면담<br>(이집트 Delta대학과 한국의 의과대학 협력방안 논의)</div>
+                    <div class="time">16:00</div>
+                    <div class="activity">Dr.정필훈 서울대 전 치과대학장 면담<br>(이집트 Delta 대학과 한국의 의과대학 협력방안 논의)</div>
+                    <div class="location">신라호텔</div>
+                </div>
+                <div class="schedule-item business-highlight">
+                    <div class="time">17:00</div>
+                    <div class="activity">AI의 이집트 접목방안 논의<br>Easy AI회사 김근희 대표와 미팅</div>
                     <div class="location">신라호텔</div>
                 </div>
                 <div class="schedule-item">
@@ -508,12 +434,12 @@
                     <div class="activity">조찬</div>
                     <div class="location">신라호텔</div>
                 </div>
-                <div class="schedule-item">
+                <div class="schedule-item business-highlight">
                     <div class="time">09:30</div>
                     <div class="activity">지형근 삼성물산 부사장 면담</div>
                     <div class="location">신라호텔</div>
                 </div>
-                <div class="schedule-item">
+                <div class="schedule-item business-highlight">
                     <div class="time">10:00</div>
                     <div class="activity">이집트진출 희망기업인 간담회</div>
                     <div class="location">신라호텔 23층 회의실 3호실</div>
@@ -544,12 +470,12 @@
                 <div class="day-header">9월 12일 (금요일) - 의료 및 건강검진</div>
                 <div class="schedule-item medical-highlight">
                     <div class="time">조찬</div>
-                    <div class="activity">금식 (검진 전 10시간 이상)<br>혈압약 제외한 나머지 약 중단 필요</div>
+                    <div class="activity">금식 (검진 전 10시간 이상)<br><strong>⚠️ 혈압약 제외한 나머지 약 중단 필요</strong></div>
                     <div class="location">신라호텔</div>
                 </div>
-                <div class="schedule-item">
+                <div class="schedule-item medical-highlight">
                     <div class="time">10:00</div>
-                    <div class="activity">메디칼 AI(심전도 진단기기 개발회사) 대표 면담</div>
+                    <div class="activity">메디칼 AI (심전도 진단기기 개발회사) 대표 면담</div>
                     <div class="location">신라호텔</div>
                 </div>
                 <div class="schedule-item">
@@ -608,9 +534,8 @@
                         경제문화협력 포럼, 엘시시 전기 출판기념
                     </div>
                     <div class="forum-item">
-                        <strong>주요 변경사항</strong>
-                        • 장소: 천신일홀 → 오문준홀(619호)<br>
-                        • 노벨평화상 추천행사 일정 조정
+                        <strong>참석 예상</strong>
+                        약 100여 명 (교수, 학계, 기업인, 언론 등)
                     </div>
                     <div class="forum-item">
                         <strong>특별 증정</strong>
@@ -622,12 +547,8 @@
 
         <div class="footer">
             <p>한국-이집트 수교 30주년을 기념하는 의미있는 방문입니다 🤝<br>
-            <small>최종 업데이트: 2025년 9월 1일</small></p>
+            <small>최종 업데이트: 2025년 9월 7일</small></p>
         </div>
     </div>
 </body>
 </html>
-</body>
-
-</html>
-
